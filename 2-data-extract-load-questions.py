@@ -47,6 +47,13 @@ duckdb_conn.sql("INSERT INTO Customer SELECT * FROM customer_df")
 
 duckdb_conn.close()
 
+# # Alternatively, instead of using pandas as an intermediate in-memory storage step,
+# # read data from SQLite and insert directly into DuckDB (https://duckdb.org/docs/stable/guides/database_integration/sqlite)
+# duckdb_conn = duckdb.connect("db/duckdb.db")
+# duckdb_conn.sql("INSERT INTO Customer SELECT * FROM sqlite_scan('db/tpch.db', 'Customer')")
+# duckdb_conn.sql("SELECT * FROM Customer").show()
+# duckdb_conn.close()
+
 
 # ***Cloud storage***
 # Question: How do you read data from the S3 location given below and write the data to a DuckDB database?
