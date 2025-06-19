@@ -58,7 +58,7 @@ def insert_data_from_csv(csv_file):
 
 
 # Insert data from CSV file
-insert_data_from_csv("./data/customers.csv")
+insert_data_from_csv("../data/customers.csv")
 
 # Close the database connection
 conn.close()
@@ -183,7 +183,7 @@ def generate_purchase_date():
 
 
 # Generate CSV data
-with open("./data/sample_data.csv", "w", newline="") as csvfile:
+with open("../data/sample_data.csv", "w", newline="") as csvfile:
     fieldnames = [
         "Customer_ID",
         "Customer_Name",
