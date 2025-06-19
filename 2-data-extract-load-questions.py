@@ -21,6 +21,8 @@ import io
 import gzip
 import requests
 from bs4 import BeautifulSoup
+import os
+from dotenv import load_dotenv
 
 # ***Databases***
 # When reading or writing to a database we use a database driver. Database drivers are libraries that we can use to read or write to a database.
@@ -109,6 +111,7 @@ except Exception as e:
 
 # Define the API endpoint
 # v3 requires API key
+load_dotenv()
 apiKey = os.getenv("API_KEY")
 url = f"https://rest.coincap.io/v3/exchanges?apiKey={apiKey}"
 
